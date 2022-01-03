@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <h3 class="centered">
+            Reset your password via email
+        </h3>
+        <form class="login-form" action="/reset" method="POST">
+            <div class="form-control">
+                <label for="email">E-Mail</label>
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email"
+                    class="<%=validationErrors.email?'invalid':''%>"
+                    value="<%=oldInput?.email%>">
+            </div>
+            <%- include('../includes/csrf-input.ejs') %>
+            <button class="btn" type="submit">Reset Password</button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>
