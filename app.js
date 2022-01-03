@@ -58,5 +58,6 @@ app.use("/500", get500);
 app.use(get404);
 app.use(globalErrorHandling);
 
-app.listen(3000, () => console.log("Server started at port 3000"));
+const port = normalizePort(process.env.PORT || "3000");
+app.listen(port, () => console.log("Server started at port 3000"));
 checkDB();
