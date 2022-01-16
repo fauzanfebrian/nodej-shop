@@ -11,7 +11,7 @@ module.exports = (order, destination) => {
   pdf
     .fontSize(32)
     .fillColor("#00695c")
-    .text("NodeShop", 50, 30, { link: "https://nodej-shop.herokuapp.com/" })
+    .text("NodeShop", 50, 30, { link: process.env.APP_URI })
     .fillColor("#6a6f73")
     .fontSize(12)
     .text(`# ${order._id}`, width - 500, 40, {

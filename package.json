@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^3.1.1",
     "csurf": "^1.11.0",
@@ -12,17 +13,18 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "express-validator": "^6.14.0",
+    "helmet": "^5.0.1",
     "mongodb": "^4.2.2",
     "mongoose": "^6.1.2",
+    "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "nodemailer": "^6.7.2",
     "pdfkit": "^0.13.0",
     "stripe": "^8.195.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app",
+    "start": "APP_URI=https://nodej-shop.herokuapp.com MONGO_USER=fauzanfebriann MONGO_PASSWORD=lahat123 MONGO_DATABASE=node-complete STRIPE_KEY=sk_test_51KD62MKqKPJ9J9Ju8ZvTjqZCGHpc0CwlLPIREmdnKE8gAhxrBlpzvB5QqeC522X1twhxEgpCBgjkykKaRTdFMFsG00vyCPkwXq node app",
     "dev": "nodemon app"
   },
   "author": "",

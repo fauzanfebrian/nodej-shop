@@ -1,0 +1,9 @@
+{
+  "env": {
+    "MONGO_USER": "fauzanfebriann",
+    "MONGO_PASSWORD": "lahat123",
+    "MONGO_DATABASE": "node-complete",
+    "STRIPE_KEY": "sk_test_51KD62MKqKPJ9J9Ju8ZvTjqZCGHpc0CwlLPIREmdnKE8gAhxrBlpzvB5QqeC522X1twhxEgpCBgjkykKaRTdFMFsG00vyCPkwXq",
+    "APP_URI": "http://196.168.100.8:3000"
+  }
+}

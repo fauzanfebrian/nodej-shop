@@ -1,8 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const stripe = require("stripe")(
-  "sk_test_51KD62MKqKPJ9J9Ju8ZvTjqZCGHpc0CwlLPIREmdnKE8gAhxrBlpzvB5QqeC522X1twhxEgpCBgjkykKaRTdFMFsG00vyCPkwXq"
-);
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const Products = require("../models/products");
 const Order = require("../models/orders");
@@ -111,8 +109,8 @@ exports.getCheckout = async (req, res, next) => {
           currency: "usd",
           quantity: p.quantity,
         })),
-        success_url: "https://nodej-shop.herokuapp.com/checkout/success",
-        cancel_url: "https://nodej-shop.herokuapp.com/checkout/cancel",
+        success_url: `${process.env.APP_URI}/checkout/success`,
+        cancel_url: `${process.env.APP_URI}/checkout/cancel`,
       });
     }
 

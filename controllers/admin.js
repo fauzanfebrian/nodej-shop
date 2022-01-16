@@ -77,7 +77,7 @@ exports.postAddProducts = async (req, res, next) => {
     const product = new Product({
       ...req.body,
       userId: req.user,
-      imageUrl: `https://nodej-shop.herokuapp.com/images/${image.filename}`,
+      imageUrl: `${process.env.APP_URI}/images/${image.filename}`,
     });
     await product.save();
     res.redirect("/admin/products");
@@ -106,7 +106,7 @@ exports.postEditProducts = async (req, res, next) => {
     if (image) {
       const imageName = product.imageUrl.split("/").pop();
       fs.unlink(`${pathDir}/public/images/${imageName}`, () => {});
-      product.imageUrl = `https://nodej-shop.herokuapp.com/images/${image.filename}`;
+      product.imageUrl = `${process.env.APP_URI}/images/${image.filename}`;
     }
     product.title = req.body.title;
     product.price = req.body.price;
@@ -127,7 +127,6 @@ exports.deleteProducts = async (req, res, next) => {
       _id: req.params.id,
       userId: req.user,
     });
-    console.log(product);
     if (!product) return res.status(404).json({ message: "no product found" });
     const imageName = product.imageUrl.split("/").pop();
     fs.unlink(`${pathDir}/public/images/${imageName}`, () => {});

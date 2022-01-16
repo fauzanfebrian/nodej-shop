@@ -123,7 +123,7 @@ exports.postReset = async (req, res, next) => {
         <p>You requested a password reset</p>
         <p>
           Click this 
-          <a href="https://nodej-shop.herokuapp.com/reset/${token}">link</a> 
+          <a href="${process.env.APP_URI}/reset/${token}">link</a> 
           to set a new password
         </p>
       `,
